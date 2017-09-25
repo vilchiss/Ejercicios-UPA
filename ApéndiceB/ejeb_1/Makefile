@@ -1,0 +1,38 @@
+# Estructura de directorios
+INCLUDEDIR = ./include
+LIBDIR = ./lib
+BINDIR = ./bin
+SRCDIR = ./src
+
+# Para la creación de la biblioteca
+AR = ar
+ARFLAGS = rs
+
+# Compilador de C
+CC = cc
+CFLAGS = -I$(INCLUDEDIR) -L$(LIBDIR)
+
+# Archivos
+TARGET = $(BINDIR)/pol
+BIBLIOTECA = $(LIBDIR)/libpol.a
+OBJETOS_BIBLIOTECA = $(SRCDIR)/pol_es.o $(SRCDIR)/pol_arit.o
+OBJETOS_PROGRAMA = $(SRCDIR)/pol.o
+PROGRAMAS_FUENTE = $(SRCDIR)/pol.c $(SRCDIR)/pol_es.c $(SRCDIR)/pol_arit.c
+
+$(TARGET): $(OBJETOS_PROGRAMA) $(BIBLIOTECA)
+	$(CC) $(OBJETOS_PROGRAMA) $(CFLAGS) -lpol -lm -o $(TARGET)
+
+$(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): $(PROGRAMAS_FUENTE)
+	(cd $(SRCDIR); make)
+
+$(BIBLIOTECA): $(OBJETOS_BIBLIOTECA)
+	$(AR) $(ARFLAGS) $(BIBLIOTECA) $(OBJETOS_BIBLIOTECA)
+
+$(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): $(INCLUDEDIR)/pol.h
+
+run:
+	./bin/pol
+
+clean:
+	rm $(TARGET)
+	(cd $(SRCDIR); make clean)
