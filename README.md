@@ -19,6 +19,7 @@ El libro se divide de la siguiente manera:
 	* 9 Comunicación mediante tuberías
 	* 10 Comunicación local entre procesos e hilos
 	* 11 Comunicación en red
+* Apéndice B  
 
 Todo el código desarrollado es para practicar, no pretende ser el mejor
 ni el más optimizado.
