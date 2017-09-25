@@ -33,6 +33,8 @@ $(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): $(INCLUDEDIR)/pol.h
 run:
 	./bin/pol
 
+.PHONY: clean
 clean:
-	rm $(TARGET)
-	(cd $(SRCDIR); make clean)
+	-rm $(TARGET)
+	-rm $(BIBLIOTECA)
+	-(cd $(SRCDIR); make clean)
