@@ -1,44 +1,34 @@
-# Estructura de directorios
-INCLUDEDIR = ./include
-LIBDIR = ./lib
-BINDIR = ./bin
-SRCDIR = ./src
-
 # Para la creación de la biblioteca
 AR = ar
 ARFLAGS = rs
 
 # Compilador de C
 CC = cc
-CFLAGS = -I$(INCLUDEDIR) -L$(LIBDIR)
+CFLAGS = -L./
 
 # Archivos
-TARGET = $(BINDIR)/pol
-BIBLIOTECA = $(LIBDIR)/libpol.a
-OBJETOS_BIBLIOTECA = $(SRCDIR)/pol_es.o $(SRCDIR)/pol_arit.o
-OBJETOS_PROGRAMA = $(SRCDIR)/pol.o
-PROGRAMAS_FUENTE = $(SRCDIR)/pol.c $(SRCDIR)/pol_es.c $(SRCDIR)/pol_arit.c
+TARGET = pol
+BIBLIOTECA = libpol.a
+OBJETOS_BIBLIOTECA = pol_es.o pol_arit.o
+OBJETOS_PROGRAMA = pol.o
+PROGRAMAS_FUENTE = pol.c pol_es.c pol_arit.c
 
 $(TARGET): $(OBJETOS_PROGRAMA) $(BIBLIOTECA)
-	-mkdir $(BINDIR)
 	$(CC) $(OBJETOS_PROGRAMA) $(CFLAGS) -lpol -lm -o $(TARGET)
 
 $(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): $(PROGRAMAS_FUENTE)
-	(cd $(SRCDIR); make)
+	$(CC) -c $(PROGRAMAS_FUENTE) $(CFLAGS)
 
 $(BIBLIOTECA): $(OBJETOS_BIBLIOTECA)
-	-mkdir $(LIBDIR)
 	$(AR) $(ARFLAGS) $(BIBLIOTECA) $(OBJETOS_BIBLIOTECA)
 
-$(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): $(INCLUDEDIR)/pol.h
+$(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA): pol.h
 
 run:
-	./bin/pol
+	./pol
 
 .PHONY: clean
 clean:
 	-rm $(TARGET)
+	-rm $(OBJETOS_PROGRAMA) $(OBJETOS_BIBLIOTECA)
 	-rm $(BIBLIOTECA)
-	-(cd $(SRCDIR); make clean)
-	-rmdir $(LIBDIR)
-	-rmdir $(BINDIR)
