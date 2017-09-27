@@ -6,6 +6,6 @@ Para ejecutar el programa:
 
     $ make run
 
-Para limpiar los archivos (Ejercicio B.8):
+Para limpiar los archivos (Ejercicio B.9):
 
     $ make limpiar

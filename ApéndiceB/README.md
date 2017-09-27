@@ -68,6 +68,11 @@
     escrito **Makefile**, compile la aplicación.
 
 *   ##### B.8
-    Añada al programa **Makefile** un objetivos para limpiar los directorios
+    Borre el fichero libpol.a de la aplicación polinomios y recompile la
+    aplicación con la orden **make**. ¿Qué ordenes ha generado **make**
+    para recompilar la aplicación?
+
+*   ##### B.9
+    Añada al programa **Makefile** un objetivo para limpiar los directorios
     de la aplicación. El nombre de este objetivo será **limpiar**, y al ejecutar
     la orden **make** debe encargarse de borrar los módulos objeto.

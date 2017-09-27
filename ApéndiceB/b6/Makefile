@@ -15,7 +15,7 @@ all:
 run:
 	(cd $(BINDIR); ./$(EJECUTABLE))
 
-# Ejercicio B.8
+# Ejercicio B.9
 .PHONY: limpiar
 limpiar:
 	(cd $(SRCDIR); make clean)
