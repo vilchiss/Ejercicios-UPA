@@ -25,7 +25,7 @@
       **multiplicar_polinomios**.
     * **pol_sum.c**, módulo donde se implementa la función
       **sumar_polinomios**.
-    * **pol_sim.c**, módulo donde se implementa la función
+    * **pol_sim.c**, módulo donde se implementa la funciónm
       **simplificar_polinomio**.
     * **pol.c**, módulo donde se implementa la función **main**.
 
@@ -45,3 +45,29 @@
 *   ##### B.5
     Utilizando la orden **nm** visualice los símbolos y sus direcciones
     asociadas que hay en el programa ***pol***.
+
+*   ##### B.6
+    Distribuya los programas de la aplicación polinomios en una estructura de
+    directorios como la descrita en la figura B.4. En esta figura no está
+    contemplado que el estado actual de la aplicación es distinto, ya que en
+    ejercicios anteriores se han generado seis módulos a partir de los módulos
+    **pol_es.c** y **pol_arit.c**. Para realizar este ejercicio se debe tener
+    en cuenta el estado actual de desarrollo de la aplicación.  
+    Una vez que se hayan distribuido los ficheros con el código fuente, se
+    deben borrar los ficheros objeto, la biblioteca y el fichero ejecutable.  
+    A continuación se deben emitir las órdenes necesarias para recompilar los
+    módulos fuente, generar la biblioteca **lib_pol.a** y el programa
+    ejecutable **pol** y situarlos en sus directorios correspondientes.
+
+*   ##### B.7
+    Escriba un fichero **Makefile** en el directorio del árbol dedicado a la
+    aplicación polinomios. El objeto de este fichero es poder compilar la
+    aplicación con la orden **make**. Hay que tener presente que, de acuerdo
+    con los ejercicios anteriores, la forma de la aplicación es ligeramente
+    distinta a la descrita en los ejemplos de esta documentación. Una vez
+    escrito **Makefile**, compile la aplicación.
+
+*   ##### B.8
+    Añada al programa **Makefile** un objetivos para limpiar los directorios
+    de la aplicación. El nombre de este objetivo será **limpiar**, y al ejecutar
+    la orden **make** debe encargarse de borrar los módulos objeto.
