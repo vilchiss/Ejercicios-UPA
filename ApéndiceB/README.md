@@ -6,14 +6,14 @@
     B.5 pág. 516 y las funciones de cada módulo serán también las
     descritas en ese apartado. Con objeto de no mezclar ficheros de
     distintas aplicaciones re recomienda crear un directorio de nombre
-    ***polinomios*** donde residdirán los módulos de la aplicación que se va
+    **polinomios** donde residirán los módulos de la aplicación que se va
     a crear.
 
 *   ##### B.2
-    Cree una biblioteca con nombre ***pol.a*** a partir de los módulos de la
-    aplicación ***polinomios***. Con objeto de mejorar la gestión de la
-    biblioteca vamos a dividir el módulo ***pol_es.c*** en tres y
-    ***pol_arit.c***. Así, la nueva composición de la aplicación será la
+    Cree una biblioteca con nombre **pol.a** a partir de los módulos de la
+    aplicación **polinomios**. Con objeto de mejorar la gestión de la
+    biblioteca vamos a dividir el módulo **pol_es.c** en tres y
+    **pol_arit.c**. Así, la nueva composición de la aplicación será la
     siguiente:
 
     * **pol_lee.c**, módulo donde se implementa la función **leer_polinomio**.
@@ -29,22 +29,22 @@
       **simplificar_polinomio**.
     * **pol.c**, módulo donde se implementa la función **main**.
 
-    La biblioteca ***pol.a*** estará compuesta por los módulos
-    ***pol_leer.o***, ***pol_esc.o***, ***pol_cre.o***, ***pol_mul.o***,
-    ***pol_sum.o*** y ***pol_sim.o***. Una vez creada la biblioteca se le debe
+    La biblioteca **pol.a** estará compuesta por los módulos
+    **pol_leer.o**, **pol_esc.o**, **pol_cre.o**, **pol_mul.o**,
+    **pol_sum.o** y **pol_sim.o**. Una vez creada la biblioteca se le debe
     añadir un índice de símbolos.
 
 *   ##### B.3
-    Recompile la aplicación ***pol*** utilizando la biblioteca creada en el
+    Recompile la aplicación **pol** utilizando la biblioteca creada en el
     ejercicio anterior.
 
 *   ##### B.4
     Utilizando la orden **nm** visualice los símbolos que hay en el índice
-    de la biblioteca ***libpol.a***.
+    de la biblioteca **libpol.a**.
 
 *   ##### B.5
     Utilizando la orden **nm** visualice los símbolos y sus direcciones
-    asociadas que hay en el programa ***pol***.
+    asociadas que hay en el programa **pol**.
 
 *   ##### B.6
     Distribuya los programas de la aplicación polinomios en una estructura de
@@ -76,3 +76,12 @@
     Añada al programa **Makefile** un objetivo para limpiar los directorios
     de la aplicación. El nombre de este objetivo será **limpiar**, y al ejecutar
     la orden **make** debe encargarse de borrar los módulos objeto.
+
+*   ##### B.10
+    Cree en el directorio polinomios el directorio **doc** que estará dedicado
+    a contener documentación sobre la aplicación polinomios.  
+    Escriba una página del manual para documentar la función
+    **escribir_polinomio** que forma parte de la biblioteca **libpol.a**.  
+    Modifique la variable de entorno **MANPATH** para que el programa man pueda
+    encontrar las páginas del manual que hay en el directorio
+    **$HOME/polinomios/doc**.
