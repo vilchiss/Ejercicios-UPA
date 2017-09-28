@@ -16,8 +16,11 @@ run:
 	(cd $(BINDIR); ./$(EJECUTABLE))
 
 # Ejercicio B.9
-.PHONY: limpiar
+.PHONY: limpiar doc
 limpiar:
 	(cd $(SRCDIR); make clean)
 	(cd $(LIBDIR); make clean)
 	(cd $(BINDIR); make clean)
+
+doc:
+	man --manpath=./doc ./doc/escribir_polinomio.3p
