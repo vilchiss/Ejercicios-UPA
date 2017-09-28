@@ -1,0 +1,48 @@
+.TH escribir_polinomio 3P
+.SH NAME
+escribir_polinomio \- función para mostrar un polinomio en pantalla
+.SH SYNOPSIS
+\fB#include "pol.h"\fP
+.PP
+.B void
+escribir_polinomio (\fBPOLINOMIO p\fP);
+.SH DESCRIPTIONS
+La función
+.B escribir_polinomio
+se utiliza para escribir, en el fichero estándar de salida, un polinomio
+.B p
+que se define con la estructura
+.B POLINOMIO.
+.PP
+El tipo
+.B POLINOMIO
+se define de la forma siguiente:
+.PP
+.B typedef struct {
+.br
+.B int grado;
+.br
+.B float *coef;
+.br
+.B }POLINOMIO;
+.PP
+Para utilizar la función
+.B escribir_polinomio
+es necesario enlazar el programa ejectuable con la biblioteca
+.B libpol.a
+Las opciones de compilación serán por lo tanto:
+.PP
+cc programa.c
+.B -Ipolinomios/include -Lpolinomios/lib -lpol
+.SH RELATED FILES
+.PP
+.B polinomios/include/pol.h
+.br
+.B polinomios/lib/libpol.a
+.SH SEE ALSO
+.PP
+leer_polinomio(3P), sumar_polinomios(3P),
+multiplicar_polinomios(3P), simplificar_polinomio(3P),
+crear_polinomio(3P)
+.SH AUTHOR
+Luis Alberto Oropeza Vilchis (vilchissfi@gmail.com)
