@@ -9,3 +9,7 @@ Para ejecutar el programa:
 Para limpiar los archivos (Ejercicio B.9):
 
     $ make limpiar
+
+Para visualizar el archivo de documentación ejecutar (Ejercicio B.10)
+
+    $ make doc
