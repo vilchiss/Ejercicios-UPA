@@ -85,3 +85,20 @@
     Modifique la variable de entorno **MANPATH** para que el programa man pueda
     encontrar las páginas del manual que hay en el directorio
     **$HOME/polinomios/doc**.
+
+*   ##### B.11
+    Este ejercicio y los siguientes tienen como objetivo la repetición de todos
+    los pasos necesarios para crear una aplicación compuesta por varios
+    ficheros. El resultado final de la aplicación será un programa que podrá
+    realizar operaciones básicas con matrices de números complejos.  
+    La aplicación debe residir en el directorio **matrices**. Aquí se creará
+    una jerarquía de subdirectorios como la descrita en los ejemplos:
+
+    * **src** para los ficheros fuente
+    * **include** para los ficheros de cabecera
+    * **lib** para la biblioteca libmat.a
+    * **bin** para el programa ejecutable **cmat** y
+    * **doc** para la documentación.
+
+    Los módulos fuente que componen a la aplicación son: **complejo.h**,
+    **matriz.h**, **complejo.c**, **matriz.c** y **cmat.c**. 
