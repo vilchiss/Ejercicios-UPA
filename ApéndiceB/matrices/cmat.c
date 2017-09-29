@@ -16,15 +16,27 @@
  */
 
 // Función main para probar la biblioteca
+#include <stdio.h>
 #include "matriz.h"
 
 int main(int argc, char **argv)
 {
     matriz a, b;
 
+    printf("***** Multiplicación *****\n");
     a = leer_matriz();
     b = leer_matriz();
+    printf("\nResultado: \n");
     escribir_matriz(multiplicar_matrices(a, b));
+    destruir_matriz(a);
+    destruir_matriz(b);
+    printf("\n***** Suma *****\n");
+    a = leer_matriz();
+    b = leer_matriz();
+    printf("\nResultado: \n");
+    escribir_matriz(sumar_matrices(a, b));
+    destruir_matriz(a);
+    destruir_matriz(b);
 
     return 0;
 }
