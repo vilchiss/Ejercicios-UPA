@@ -101,4 +101,21 @@
     * **doc** para la documentación.
 
     Los módulos fuente que componen a la aplicación son: **complejo.h**,
-    **matriz.h**, **complejo.c**, **matriz.c** y **cmat.c**. 
+    **matriz.h**, **complejo.c**, **matriz.c** y **cmat.c**.
+
+*   ##### B.12
+    Para llevar a cabo la compilación de la aplicación, habrá que escribir un
+    fichero **Makefile** que tenga en cuenta las relaciones que existen entre
+    todo los módulos, incluidos los ficheros de cabecera, así como la
+    distribución de los mismos en los directorios que se han indicado en el
+    ejercicio anterior. Hay que tener en cuenta que los módulos **complejo.o**
+    y **matriz.o** se deben utilizar para crear la biblioteca **libmat.a**.
+    El programa **cmat** debe ser enlazado con la biblioteca **libmat.a** y no
+    con los módulos **complejo.o** y **matriz.o**. Una vez escrito el fichero
+    **Makefile** compile la aplicación.
+
+*   ##### B.13
+    Genere una páginal del manual donde se explique la interfaz y forma de uso
+    de la función **multiplicar_matrices**. Añada el directorio **matrices/doc**
+    a la ruta de búsqueda del programa **man** y compruebe que se puede hacer la
+    consulta.
