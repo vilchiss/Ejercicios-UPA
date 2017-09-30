@@ -4,7 +4,9 @@
 SRCDIR = ./src
 LIBDIR = ./lib
 BINDIR = ./bin
+DOCDIR = ./doc
 
+.PHONY: clean run all doc
 all:
 	@(cd $(SRCDIR); make)
 	@(cd $(LIBDIR); make)
@@ -14,8 +16,10 @@ run:
 	@(cd $(BINDIR); make run)
 
 
-.PHONY: clean
 clean:
 	@(cd $(SRCDIR); make clean)
 	@(cd $(LIBDIR); make clean)
 	@(cd $(BINDIR); make clean)
+
+doc:
+	man --manpath=./doc ./doc/multiplicar_matrices.3p
