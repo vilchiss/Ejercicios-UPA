@@ -1,0 +1,53 @@
+.TH multiplicar_matrices 3P
+.SH NAME
+multiplicar_matrices \- función para multiplicar dos matrices de elementos
+complejos, una de orden nxm y otra de pxq y se debe cumplir que m = p.
+.SH SYNOPSIS
+\fB#include "matrices.h"\fP
+.PP
+.B matriz
+multiplicar_matrices (\fBmatriz a, matriz b\fP);
+.SH DESCRIPTIONS
+La función
+.B multiplicar_matrices
+se utiliza para realizar la multiplicación de dos matrices,
+.B a
+y
+.B b
+que se definen con la estructura
+.B matriz.
+.PP
+El tipo
+.B matriz
+se define de la forma siguiente:
+.PP
+.B typedef struct {
+.br
+.B int filas, columnas;
+.br
+.B complejo **coef;
+.br
+.B }matriz;
+.PP
+Para utilizar la función
+.B multiplicar_matrices
+es necesario enlazar el programa ejectuable con la biblioteca
+.B libmat.a
+Las opciones de compilación serán por lo tanto:
+.PP
+cc programa.c
+.B -Imatrices/include -Lmatrices/lib -lmat
+.SH RELATED FILES
+.PP
+.B matrices/include/matriz.h
+.br
+.B matrices/include/complejo.h
+.br
+.B matrices/lib/libmat.a
+.SH SEE ALSO
+.PP
+sumar_matrices(3P), leer_matriz(3P),
+escribir_matriz(3P), crear_matriz(3P),
+destruir_matriz(3P)
+.SH AUTHOR
+Luis Alberto Oropeza Vilchis (vilchissfi@gmail.com)
