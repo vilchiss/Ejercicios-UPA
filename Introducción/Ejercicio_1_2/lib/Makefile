@@ -1,0 +1,15 @@
+SRCDIR = ../src
+
+AR = ar
+ARFLAGS = rs
+
+BIBLIOTECA = libmic.a
+OBJETOS_BIBLIOTECA = $(SRCDIR)/mic.o
+
+$(BIBLIOTECA): $(OBJETOS_BIBLIOTECA)
+	$(AR) $(ARFLAGS) $(BIBLIOTECA) $(OBJETOS_BIBLIOTECA)
+
+.PHONY: clean
+
+clean:
+	-rm $(BIBLIOTECA)
