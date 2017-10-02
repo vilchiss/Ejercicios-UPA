@@ -2,7 +2,7 @@ LIBDIR = ./lib
 BINDIR = ./bin
 SRCDIR = ./src
 
-.PHONY: clean run all biblioteca
+.PHONY: clean run all
 all:
 	@(cd $(SRCDIR); make)
 	@(cd $(LIBDIR); make)
@@ -16,6 +16,3 @@ clean:
 	@(cd $(SRCDIR); make clean)
 	@(cd $(LIBDIR); make clean)
 	@(cd $(BINDIR); make clean)
-
-biblioteca:
-	@(cd $(LIBDIR); make)
