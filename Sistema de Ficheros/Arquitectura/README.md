@@ -4,7 +4,7 @@
     **fopen** podemos abrir este fichero y asociarle un flujo para manejarlo
     desde un programa. Escriba un programa que:
 
-    (a) Declare un array de seis flujos  &mdash;**FILE *f[6];** &mdash;  
+    (a) Declare un array de seis flujos  &mdash;**FILE \*f[6];** &mdash;  
     (b) Abra el fichero **/dev/tty** tres veces en modo lectura y le asocie los
     primeros tres flujos del array.  
     (c) Abra el fichero **/dev/tty** tres veces en modo escritura y le asocie
@@ -14,10 +14,10 @@
     (e) Usando la función **fprintf** escriba sobre cada uno de los flujos de
     salida el mensaje:  
     **Mensaje dirigido al flujo nro. #**  
-    done **#** debe ser sustituido por el número del flujo &mdash;posición que
+    donde **#** debe ser sustituido por el número del flujo &mdash;posición que
     ocupa en el array&mdash;.
 
     Para compilar:
-        $ gcc eje2_9.c -o eje2_9
-    Para ejecutar:
+        $ gcc eje2_9.c -o eje2_9  
+    Para ejecutar:  
         $ ./eje2_9
