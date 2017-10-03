@@ -17,7 +17,11 @@
     donde **#** debe ser sustituido por el número del flujo &mdash;posición que
     ocupa en el array&mdash;.
 
-    Para compilar:
+    Para compilar:  
+
         $ gcc eje2_9.c -o eje2_9  
+
     Para ejecutar:  
-        $ ./eje2_9
+
+        $ ./eje2_9  
+    
