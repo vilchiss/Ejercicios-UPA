@@ -22,7 +22,6 @@
 int main(int argc, char **argv)
 {
     long int tam_bloque = 0;
-    long int tam_direccion = 0;
     long int direccionable = 0;
     long int bloques = 0;
     long int memoria = 0;
@@ -34,11 +33,7 @@ int main(int argc, char **argv)
         exit(0);
     }
     tam_bloque = atoi(argv[1]);
-    tam_direccion = ceil(log(tam_bloque) / log(2)); // bits para direccionar
-    tam_direccion /= 8; // Bytes para direccionar
-    if (tam_direccion % 8 != 0)
-        tam_direccion++;
-    direccionable = tam_bloque / tam_direccion;
+    direccionable = tam_bloque / 4; // 4 bytes de dirección
     printf("Tipo dir. \tRango bloques \tRango bytes \tTotal bytes\n");
     for (i = 0; i < 10; i++) {
         printf("Directa %d: \t%ld \t\t%ld..%ld \t1\n",
@@ -51,11 +46,11 @@ int main(int argc, char **argv)
     }
     printf("Indirecta: \t%ld..%ld \t\t%ld..%ld \t%ld\n",
             bloques,
-            bloques + direccionable,
+            bloques + direccionable - 1,
             memoria,
             memoria + direccionable * tam_bloque - 1,
             direccionable);
-    bloques += direccionable;
+    bloques += direccionable - 1;
     memoria += direccionable * tam_bloque;
     printf("Indirecta 2: \t%ld..%ld \t\t%ld..%ld \t%ld\n",
             bloques + 1,
