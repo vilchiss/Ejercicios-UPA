@@ -17,11 +17,19 @@
     donde **#** debe ser sustituido por el número del flujo &mdash;posición que
     ocupa en el array&mdash;.
 
-    Para compilar:  
+    Para compilar y ejecutar:  
 
         $ gcc eje2_9.c -o eje2_9  
+        $ ./eje2_9
 
-    Para ejecutar:  
 
-        $ ./eje2_9  
-    
+*   ##### Ejercicio 2.31
+    Escriba un programa que reciba a  través de la línea de órdenes un número
+    entero que representa el tamaño del bloque de un sistema de ficheros. El
+    programa debe generar una tabla con los rangos de representación de cada
+    una de las entradas de direcciones de un nodo-i.
+
+    Para compilar y ejecutar:  
+
+        $ gcc eje2_31.c -o eje2_31  
+        $ ./eje2_31  
